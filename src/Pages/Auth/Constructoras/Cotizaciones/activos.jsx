@@ -51,6 +51,7 @@ const useStyles = makeStyles({
 // Inspired by blueprintjs
 function StyledRadio(props) {
   const classes = useStyles();
+  const { data } = props
 
   return (
     <Radio
@@ -64,14 +65,26 @@ function StyledRadio(props) {
   );
 }
 
-export default function CustomizedRadios() {
+export default function CustomizedRadios(props) {
+
+  const { data } = props
+
+  if (undefined === data)
+    return null
+  const { data: Options } = data
+  const array = []
+  Options.forEach(element => {
+    array.push(element)
+  });
+  console.log(array)
   return (
     <FormControl component="fieldset">
-      <FormLabel component="legend">Estatus del Proyecto</FormLabel>
-      <RadioGroup defaultValue="female" aria-label="gender" name="customized-radios">
-        <FormControlLabel value="female" control={<StyledRadio />} label="Activo" />
-        <FormControlLabel value="male" control={<StyledRadio />} label="inactivo" />
-        <FormControlLabel value="other" control={<StyledRadio />} label="Activos/Inactivos" />
+      <FormLabel component="legend">{data && data.title}</FormLabel>
+      <RadioGroup defaultValue={data && data.defaultValue} name="customized-radios">
+        {array && array.map((item, i) => { 
+          return <FormControlLabel key={1} value={item.value} control={<StyledRadio />} label={item.label} /> 
+        })
+        }
       </RadioGroup>
     </FormControl>
   );

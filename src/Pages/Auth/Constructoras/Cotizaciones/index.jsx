@@ -111,12 +111,28 @@ function Filters({ visible }) {
     <div class="container" style={{ display: visible ? '' : 'none' }} style={{ background: 'transparent' }}>
       <div class="notification">
         <Column.Group>
-        <Column>
-            <CustomizedRadios />
+          <Column >
+            <CustomizedRadios data={{ title: "Estatus del Proyecto", defaultValue: "0", data: [{ label: 'activo', value: '2' }, { label: 'Inactivo', value: '1' }, { label: 'Activos/Inactivos', value: '0' }] }} />
           </Column>
           <Column>
-            <CustomizedRadios />
+            <CustomizedRadios data={{ title: "Proyectos cotizados", defaultValue: "0", data: [{ label: 'Proyectos pendientes', value: '3' }, { label: 'Proyectos declinados', value: '2' }, { label: 'Proyectos aceptados', value: '1' }, { label: 'Todos los proyectos', value: '0' }] }} />
+            
+          <Column.Group>
+          <Column>
+          Datos de la constructora
           </Column>
+          <Column>
+          Orden de compra
+          </Column>
+          </Column.Group>    
+
+
+          </Column>
+          <Button style={{
+            right: '16px',
+            bottom: '16px',
+            position: 'absolute'
+          }} variant="outlined" color="primary">Aplicar Filtros</Button>
         </Column.Group>
       </div>
     </div>

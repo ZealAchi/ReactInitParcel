@@ -21,6 +21,7 @@ import { styleNavbar, LinkMenu, LinkMenuMobil } from './../../helpers/VarCompone
 import Login from "./../../Pages/NoAuth/Login";
 import Register from "./../../Pages/NoAuth/Register";
 import { AuthContext } from '../../Context/AuthContext';
+import Notification from './notification';
 export default function MenuAppBar() {
   const { isAuthenticated, logout, typeUser, isAdmin:isAdministrator } = useContext(AuthContext)
 
@@ -200,11 +201,7 @@ export default function MenuAppBar() {
                 <LinkMenu to="/DashBoard">
                   <Button color="inherit" >Mi DashBoard</Button>
                 </LinkMenu>
-                <IconButton aria-label="show 17 new notifications" color="inherit">
-                  <Badge badgeContent={17} color="secondary">
-                    <NotificationsIcon />
-                  </Badge>
-                </IconButton>
+                <Notification/>
                 <IconButton
                   edge="end"
                   aria-label="account of current user"
