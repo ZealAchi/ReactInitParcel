@@ -1,0 +1,259 @@
+
+  
+  .card-container > .ant-tabs-card > .ant-tabs-content {
+    height: 100%;
+    margin-top: -16px;
+  }
+  
+  .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {
+    background: darkgrey;
+    padding: 16px;
+  }
+  
+  .card-container > .ant-tabs-card > .ant-tabs-bar {
+    border-color: #fff;
+  }
+  
+  .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .card-container {
+    background: rgb(99, 110, 114);
+    color: #ffffff;
+    
+  }
+  .ant-tabs-nav-scroll{
+  color: #ffffff;
+}
+  
+  .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
+    border-color: #fff;
+    background: #fff;
+  }
+  *,
+  *::before,
+  *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+      
+  
+      outline:0 none !important;
+  } 
+  
+  html {
+      box-sizing: border-box;
+      font-size: 62.5%; /* 10px / 16px -> 62.5% -> 1rem -> 10px */
+  } 
+  
+  html,
+  body,
+  #react_root {
+      position: relative;
+      z-index: 0;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      
+      width: 100vw;
+      height: 100vh;
+      
+      top: 0px;
+      left: 0px;
+  } 
+  
+  .xterm-helpers {
+      height: 0px;
+      overflow:hidden;
+  }
+  
+  .ant-advanced-search-form {
+    padding: 24px;
+    background: #fbfbfb;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+  }
+  
+  .ant-advanced-search-form .ant-form-item {
+    display: flex;
+  }
+  
+  .ant-advanced-search-form .ant-form-item-control-wrapper {
+    flex: 1;
+  }
+
+  #components-form-demo-normal-login .login-form {
+    max-width: 300px;
+  }
+  #components-form-demo-normal-login .login-form-forgot {
+    float: right;
+  }
+  #components-form-demo-normal-login .login-form-button {
+    width: 100%;
+  }
+  #components-form-demo-normal-login .login-form {
+    max-width: 300px;
+  }
+  #components-form-demo-normal-login .login-form-forgot {
+    float: right;
+  }
+  #components-form-demo-normal-login .login-form-button {
+    width: 100%;
+  }
+  .carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    
+}
+
+
+#components-back-top-demo-custom .ant-back-top {
+  bottom: 100px;
+}
+#components-back-top-demo-custom .ant-back-top-inner {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  background-color: #1088e9;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+}
+.steps-content {
+  margin-top: 16px;
+  border: 1px dashed #e9e9e9;
+  border-radius: 6px;
+  background-color: #ffffff;
+  min-height: 200px;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.steps-action {
+  margin-top: 24px;
+}
+
+.kuma-uxform-field .kuma-label {
+  width: 125px;
+  padding-top: 6px;
+  padding-right: 12px;
+  vertical-align: top;
+}
+.ant-upload-list {
+  background: #ffffff;
+ -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ color: rgba(0, 0, 0, 0.65);
+ font-size: 14px;
+ font-variant: tabular-nums;
+ line-height: 1.5;
+ list-style: none;
+ -webkit-font-feature-settings: 'tnum';
+         font-feature-settings: 'tnum';
+ zoom: 1;
+}
+
+
+#scene-defaultpage-demo-basic {
+  /* position:relative; */
+  /* height:500px; */
+}
+.fillErrorDemo {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:684px;
+    height:220px;
+}
+.fillErrorDemo .errorLeft {
+  float:left;
+  width:220px;
+  height:220px;
+}
+.fillErrorDemo .errorLeft .kuma-empty-data-icon{
+  height:220px;
+  width:220px;
+}
+.fillErrorDemo .errorLeft .kuma-empty-data-content{
+  display:none;
+}
+.fillErrorDemo .errorRight {
+  float:right;
+  display:table;
+  width:400px;
+  height:100%;
+
+}
+.fillErrorDemo .errorRight .tips{
+  display:table-cell;
+  vertical-align:middle;
+  margin-right:64px;
+  width:400px;
+}
+.fillErrorDemo .errorRight .tipsTitle {
+  margin-bottom:28px;
+  line-height:32px;
+  font-size:32px;
+  color:rgba(31,56,88,1);
+  letter-spacing:0;
+}
+.fillErrorDemo .errorRight .errorRips{
+  line-height:22px;
+  font-size:14px;
+  letter-spacing:0;
+  color: rgba(-2147483648,26,-2147483648,0.60);
+}
+.fillErrorDemo .errorRight .errorButtons{
+  margin-top:28px;
+}
+.fillErrorDemo .errorButtons button{
+  margin-right:12px;
+}
+.kuma-button span {
+  display:inline-block;
+  line-height:12px;
+}
+
+.cifrasImage{
+  background: url('https://cdn.civitatis.com/japon/tokio/guia/informacion-general.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 360px;
+  padding-top: 130px;
+  padding-bottom: 120px
+}
+
+
+.page-demo3 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.searchForm {
+  width: 1000px;
+}
+
+.searchButton {
+  padding: 2px 0 0 10px;
+}
+
+h2 {
+  font-size: 24px;
+}
+.kuma-uxtable-cell{
+  width: auto; text-align: left;
+}
