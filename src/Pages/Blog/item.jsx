@@ -68,7 +68,7 @@ export default function MediaCard({ title, description, user, date, image, miPub
         <CardMedia
           className={classes.media}
           style={{ width: 'inherit', maxWidth: '100%', padding: '10rem' }}
-          image={image ? image : 'http://cosupplies.net/img/data-img/9blog_Captura%20de%20pantalla%202019-11-07%20a%20las%2013.38.20.png'}
+          image={image ? image : 'http://CoSupplies.net/img/data-img/9blog_Captura%20de%20pantalla%202019-11-07%20a%20las%2013.38.20.png'}
           title={title ? title : 'Contemplative Reptile'}
         />
         <Divider variant="inset" component="li" />

@@ -13,11 +13,16 @@ export default function UnRegistered(){
             <HeroLanging gradient >
             <Hero.Body>
                 <Container>
-                    <Title textAlign="centered" style={{  color: 'white', textShadow: '2px 2px 4px #000000'}}> Cosupplies </Title>
+                    <Title textAlign="centered" > CoSupplies </Title>
                 </Container>
             </Hero.Body>
             </HeroLanging>
-            <Carrusel img={imagenes}/>
+            <Carrusel style={{
+width: '79rem',
+display: 'flex',
+height: '35rem'
+
+            }} img={imagenes}/>
 
             <Heros color="white" textAlign="centered">                
                 <Beneficios titulo="Beneficios" subtitulo="Hazlo en linea desde cualquier parte del mundo." contenido={datos} boxHeight="9.5rem"/>
@@ -30,26 +35,25 @@ export default function UnRegistered(){
 }
 
 const HeroLanging = Styled(Hero)`
-    background-color: '#1fc8db';
-    background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+
 `
 
 
 const imagenes=[
     {
-      class: "d-block w-100",
-      img:"https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
-      alt:"First slide",
-      title:'Titulo uno',
-      subtitle:'Subtitulo uno',
-      width:''
-    },
-    {
-      class: "d-block w-100",
-      img:"https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg",
-      alt:"First slide",
-      title:'Titulo dos',
-      subtitle:'Subtitulo dos',
-      width:''
-    }
+        class: "d-block w-100",
+        img:"http://legnaconstrucciones.com/wp-content/uploads/2017/05/empresa-construccion-legna.jpg",
+        alt:"First slide",
+        title:'Nominación 2020',
+        subtitle:'Uso de materiales sustentables',
+        width:''
+      },
+      {
+        class: "d-block w-100",
+        img:"https://elsouvenir.com/wp-content/uploads/2018/08/Construcciones-lujosas-Paseo-Montejo-Foto-El-Souvenir-1.jpg",
+        alt:"First slide",
+        title:'Premio 2019',
+        subtitle:'Mejor construcción',
+        width:''
+      }
   ]

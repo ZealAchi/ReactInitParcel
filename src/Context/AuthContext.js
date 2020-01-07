@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import React, { useState, createContext } from "react";
 import { toast } from "react-toastify";
+import client from "../apolloClient";
 
 export const AuthContext = createContext();
 const DataInit={
@@ -14,6 +15,8 @@ const DataInit={
   password: "127as127",
   typeUser: "",
   user: "",
+  refetch:()=>{},
+  session:[]
 }
 function AuthContextProvider(props, context) {
   const { children } = props;
@@ -24,15 +27,28 @@ function AuthContextProvider(props, context) {
     if (name === "username") setState({ ...state, user: valor });
     if (name === "password") setState({ ...state, password: valor });
   }
-  function logout(DataInit) {
-    setState();
-    clearState();
-    
-  }
-  function clearState() {
-    setState({ ...state, user: '', });
-  }
+  function logout() {
+    localStorage.setItem("token",'');
+    setState({...DataInit});
+    client.clearStore()
 
+  }
+  function setRefetch(value,data){
+    console.log(data.activeUser)
+    const {role="", name="",isAdmin="",lastName="",secondLastName=""}=data.activeUser
+    setState({
+      ...state,
+      refetch: value,
+      session:data,
+      token: localStorage.getItem('token'),
+      isAuthenticated: name?true:false,
+      isAdmin: isAdmin,
+      typeUser: role,
+      name: name,
+      lastName: lastName,
+      secondLastName: secondLastName,
+    })
+  }
   function handleSubmit(event, signupUser,history) {
     event.preventDefault();
 
@@ -41,28 +57,22 @@ function AuthContextProvider(props, context) {
         const { login } = data;
         const decoded = jwt.verify(login.token, "10Naaaite10");
         localStorage.setItem("token", login.token);
-        console.log(decoded);
         setState({
           ...state,
           token: login.token,
           isAuthenticated: true,
           isAdmin: decoded.isAdmin,
           typeUser: decoded.role,
-          name: decoded.role,
-          lastName: decoded.role,
+          name: decoded.name,
+          lastName: decoded.lastName,
+          secondLastName: decoded.secondLastName,
           user:'',
           password:''
         });
 
-        // await this.props.refetch();
-        
-        // this.props.history.push('/');
+        await this.props.refetch();
 
-        //localStorage.setItem('token', data.signupUser.token);
-        //await this.props.refetch();
-        // clearState();
-        // this.props.history.push('/Bldgs');
-         history.push('/')
+        history.push('/')
       })
       .catch(error => {
         try {
@@ -116,7 +126,7 @@ function AuthContextProvider(props, context) {
 
   return (
     <AuthContext.Provider
-      value={{ ...state, handleChange: handleChange, handleSubmit, logout }}
+      value={{ ...state, handleChange: handleChange, handleSubmit, logout,setRefetch:setRefetch }}
     >
       {children}
     </AuthContext.Provider>

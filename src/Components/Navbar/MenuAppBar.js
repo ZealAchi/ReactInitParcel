@@ -167,7 +167,7 @@ export default function MenuAppBar() {
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             <LinkMenu to="/">
-              Cosupplies
+              CoSupplies
             </LinkMenu>
           </Typography>
           <div className={classes.search}>

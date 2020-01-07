@@ -8,7 +8,7 @@ function EffectContextProvider(props) {
  
     const [state, setState] = useState({
         visible: false,
-        effect: 'fade',
+        effect: 'threeSlit',
     })
     
     
@@ -17,10 +17,17 @@ function EffectContextProvider(props) {
       visible: !state.visible,
     });
   }
-
+  function handleChange(value) {
+    alert(value)
+    setState({
+      ...state,
+      effect: value,
+    });
+    alert(state.effect)
+  }
   return (
     <EffectContext.Provider
-      value={{ ...state, showComponent: showComponent }}
+      value={{ ...state, showComponent: showComponent,handleChange:handleChange }}
     >
       {children}
     </EffectContext.Provider>

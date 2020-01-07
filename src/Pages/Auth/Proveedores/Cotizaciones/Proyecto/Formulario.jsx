@@ -69,7 +69,7 @@ function DatosProyecto() {
       <Column.Group centered>
         <Column size="three-fifths">
           <Form className="form-select" jsxvalues={{ mode: 'Selecciona un tipo de Proyecto' }} jsxonChange={handleModeChange}>
-            <SelectFormField jsxdata={{ tipo1: 'residencial', tipo2: 'comercial', tipo3: 'industrial', tipo4: 'obras publicas', tipo5: 'industrial' }} jsxname="mode" jsxlabel="Tipo de Proyecto" showSearch={false} />
+            <SelectFormField jsxdata={{ tipo1: 'Construcción residencial', tipo2: 'Construcción comercial', tipo3: 'Construcción institucional', tipo4: 'Construcción  obras publicas', tipo5: 'Construcción industrial' }} jsxname="mode" jsxlabel="Tipo de Proyecto" showSearch={false} />
           </Form>
         </Column>
       </Column.Group>

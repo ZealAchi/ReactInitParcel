@@ -1,27 +1,33 @@
 import React from 'react'
 import gql from "graphql-tag";
 
-import {Query} from 'react-apollo'
+import { Query } from 'react-apollo'
 
-const GET_ACTIVE_USER=gql`
+const GET_ACTIVE_USER = gql`
 query{
-    activeUser{
-        username
-    }
+  activeUser{
+    id
+    email
+    role
+    name
+    isAdmin
+    lastName
+    secondLastName
+  }
 }
 `
 
 
 const withSession = Component => props => (
-    <Query query={GET_ACTIVE_USER}>
-      {({ data, loading, refetch }) => {
-        if (loading) return null;
-        // console.log(data)
+  <Query query={GET_ACTIVE_USER}>
+    {({ data, loading, refetch }) => {
+      if (loading) return (<>
+      Loading...
+      <img src={require('./assests/images/Loading.gif')} />
+      </>)
+      return <Component {...props} refetch={refetch} session={data}/>;
+    }}
+  </Query>
+);
 
-        return <Component />;
-        // return <Component {...props} refetch={refetch} session={data}/>;
-      }}
-    </Query>
-  );
-  
-  export default withSession;
+export default withSession;

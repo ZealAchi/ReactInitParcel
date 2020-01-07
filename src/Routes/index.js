@@ -1,11 +1,9 @@
-import React, { memo, useContext } from "react";
+import React, { memo, useContext, useEffect} from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Switch,
   Redirect,
-  useLocation
 } from "react-router-dom";
 import {
   Layout,
@@ -28,94 +26,96 @@ import LandingPage from "../Pages/NoAuth/LandingPage";
 import Categorias from "../Pages/Auth/Categorias";
 
 // import AdminUsersCrete from "../Pages/Auth/Admin/Usuarios/crear";
-const Root=({ })=>{
+const Root = ({ refetch, session }) => {
   const Context = useContext(AuthContext)
-  const { isAuthenticated, typeUser, isAdmin:isAdministrator } = Context
-  // console.log(isAuthenticated, typeUser)
+  const { isAuthenticated, typeUser, isAdmin: isAdministrator,setRefetch } = Context
+  console.log("session", session)
+  // useEffect(()=>{
+  //   setRefetch(refetch, session)
+  // },[])
 
-
-  return(
-  <div style={{ background: '#fff'}}>
+  return (
+    <div style={{ background: '#fff' }}>
       {/* <LandingPage/> */}
-  <Router>
-   <Layout>
-    <Switch>
-    <Route path="/Subastas" exact render={() => <Subastas />} />
-    <Route path="/" exact render={() =>{
-      if(typeUser==='Proveedor'){
-        return <Proveedores />
-      }else if(typeUser==='Constructora'){
-        return <Constructoras />
-      }
+      <Router>
+        <Layout>
+          <Switch>
+            {/* <Route path="/Subastas" exact render={() => <Subastas />} /> */}
+            <Route path="/" exact render={() => {
+              if (typeUser === 'Proveedor') {
+                return <Proveedores />
+              } else if (typeUser === 'Constructora') {
+                return <Constructoras />
+              }
 
-      else{
-        return <UnRegistered />
-      }
-    }} />
-    <Route path="/Cotizacion/Proyecto/Nuevo" exact render={() =>{
-      if(typeUser==='Constructora'){
-        return <CotizacionCrearProyecto />
-      }else{
-        return <NoMatch />
-      }
-    }} />
-    <Route path="/Constructora" exact render={() =>{
-      // if(typeUser==='Proveedor'){
-        return <Constructoras />    
-    }} />
-    
-    <Route path="/Register/:id" render={() => <Registro />} />
-    <Route path="/Categorias" render={() => <Categorias />} />
-      
-      <Route path="/Blog" exact render={() => <Blog />} />
-      <Route path="/Proveedores" exact render={() => <Proveedores />} />
-      <Route path="/Blog/Crear" render={() => {
-        if (isAuthenticated) {
-          return <BlogCrear />
-        } else {
-          return <Redirect to='/blog' />
-        }
-      }}
-      />
-      <Route path="/blog/misPublicaciones/Editar" render={() => {
-        if (isAuthenticated) {
-          return <BlogCrear />
-        } else {
-          return <Redirect to='/blog' />
-        }
-      }}
-      />
-      <Route path="/Blog/MisPublicaciones" render={() => {
-        if (isAuthenticated) {
-          return <MisPublicaciones />
-        } else {
-          return  <NoMatch />
-        }
-      }}
-      />
-      <Route path="/admin/users" exact render={() => {
-        if (isAuthenticated) {
-          if (isAdministrator) {
-            return <AdminUsers/>
-          } else {
-            return  <NoMatch />
-          }
-        } else {
-          return  <NoMatch />
-        }
-      }
-      } />
-      <Route path="*">
-        <NoMatch />
-      </Route>
-    </Switch>
-    </Layout>
-  </Router>
-</div>)
+              else {
+                return <UnRegistered />
+              }
+            }} />
+            <Route path="/Cotizacion/Proyecto/Nuevo" exact render={() => {
+              if (typeUser === 'Constructora') {
+                return <CotizacionCrearProyecto />
+              } else {
+                return <NoMatch />
+              }
+            }} />
+            <Route path="/Constructora" exact render={() => {
+              // if(typeUser==='Proveedor'){
+              return <Constructoras />
+            }} />
+
+            <Route path="/Register/:id" render={() => <Registro refetch={refetch} />} />
+            <Route path="/Categorias" render={() => <Categorias />} />
+
+            <Route path="/Blog" exact render={() => <Blog />} />
+            <Route path="/Proveedores" exact render={() => <Proveedores />} />
+            <Route path="/Blog/Crear" render={() => {
+              if (isAuthenticated) {
+                return <BlogCrear />
+              } else {
+                return <Redirect to='/blog' />
+              }
+            }}
+            />
+            <Route path="/blog/misPublicaciones/Editar" render={() => {
+              if (isAuthenticated) {
+                return <BlogCrear />
+              } else {
+                return <Redirect to='/blog' />
+              }
+            }}
+            />
+            <Route path="/Blog/MisPublicaciones" render={() => {
+              if (isAuthenticated) {
+                return <MisPublicaciones />
+              } else {
+                return <NoMatch />
+              }
+            }}
+            />
+            <Route path="/admin/users" exact render={() => {
+              if (isAuthenticated) {
+                if (isAdministrator) {
+                  return <AdminUsers />
+                } else {
+                  return <NoMatch />
+                }
+              } else {
+                return <NoMatch />
+              }
+            }
+            } />
+            <Route path="*">
+              <NoMatch />
+            </Route>
+          </Switch>
+        </Layout>
+      </Router>
+    </div>)
 }
 export default memo(function Routes() {
   // return <Root/>
-  return <RootWithSession/>
+  return <RootWithSession />
 })
 
-const RootWithSession=withSession(Root)
+const RootWithSession = withSession(Root)

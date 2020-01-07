@@ -10,7 +10,7 @@ export default function Constructoras(){
       <TabPane tab="Contizaciones" key="1">
         <Cotizaciones/>
       </TabPane>
-      <TabPane tab="Subastas" key="2">
+      <TabPane tab="Maquinaria" key="2">
         <p>Content of Tab Pane 2</p>
         <p>Content of Tab Pane 2</p>
         <p>Content of Tab Pane 2</p>

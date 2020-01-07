@@ -11,7 +11,7 @@ export default function UnRegistered(){
             <HeroLanging gradient >
             <Hero.Body>
                 <Container>
-                    <Title textAlign="centered" style={{  color: 'white', textShadow: '2px 2px 4px #000000'}}> Cosupplies </Title>
+                    <Title textAlign="centered" style={{  color: 'white', textShadow: '2px 2px 4px #000000'}}> CoSupplies </Title>
                 </Container>
             </Hero.Body>
             </HeroLanging>

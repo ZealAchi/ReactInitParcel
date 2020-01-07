@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { Table, Divider, Tag, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { Hero, Container, Title, Column } from 'rbx'
@@ -9,27 +9,24 @@ import Filtros from "./Filtros";
 
 import { Animate } from 'uxcore';
 import CustomizedRadios from "./activos";
+import { EffectContext } from "../../../../Context/EffectContext";
+
 
 export default function index() {
   const [state, setState] = useState({
-    value: '2016-01-02',
-    visible: false,
-    effect: 'fade',
+    value: '2020-01-02',
+    // visible: false,
+    // effect: 'fade',
   })
+  const {visible,effect,showComponent,handleChange}=useContext(EffectContext)
 
-  function showComponent() {
-    setState({
-      ...state,
-      visible: !state.visible,
-    });
-  }
+  // function showComponent() {
+  //   setState({
+  //     ...state,
+  //     visible: !visible,
+  //   });
+  // }
 
-  function handleChange(value) {
-    setState({
-      ...state,
-      effect: value,
-    });
-  }
   const {
     InputFormField: Input,
     DateFormField: Date,
@@ -37,18 +34,8 @@ export default function index() {
     OtherFormField: Other,
   } = Form;
 
-  // function onSelect(value) {
-  //   console.log(value);
-  //   setState({
-  //     ...state,
-  //     value,
-  //   });
-  // }
 
   return (<>
-
-
-    {/* <Table columns={columns} dataSource={data} style={{ padding: '2rem' , background:'#fff'}} /> */}
     <Hero color="white">
       <Hero.Body>
         <Container>
@@ -69,14 +56,14 @@ export default function index() {
                 </Form>
               </Column>
               <Column>
-                <Filtros showComponent={showComponent} handleChange={handleChange} state={state}
+                <Filtros showComponent={showComponent} handleChange={handleChange} state={{...state,visible,effect}}
                 />
               </Column>
               <Column>
               </Column>
             </Column.Group>
             <Animate showProp="visible" transitionName={state.effect} transitionAppear>
-              <Filters visible={state.visible} />
+              <Filters visible={visible} />
             </Animate>
           </Box>
 
@@ -104,11 +91,12 @@ export default function index() {
 
 
 
-function Filters({ visible }) {
-
+function Filters() {
+  const {visible}=useContext(EffectContext)
+   console.log(visible,visible?'muestrate':'oculatate')
   return (
 
-    <div class="container" style={{ display: visible ? '' : 'none' }} style={{ background: 'transparent' }}>
+    <div class="container" style={{ background: 'transparent' , display: visible ? '' : 'none' }}>
       <div class="notification">
         <Column.Group>
           <Column >
@@ -122,7 +110,7 @@ function Filters({ visible }) {
           Datos de la constructora
           </Column>
           <Column>
-          Orden de compra
+          Ordexxxn de compra
           </Column>
           </Column.Group>    
 
@@ -148,91 +136,42 @@ const GetAllProyectos = [
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
     Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
+    Imagen: "http://www.rabbsconstruction.com/images/construction-contractors.jpg",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
     Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
+    Imagen: "https://rgbcltd.files.wordpress.com/2018/10/commercial-construction.jpg?w=660",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
     Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
+    Imagen: "http://fnbe0315darrentan.weebly.com/uploads/5/0/6/7/50679395/3316314_orig.jpg",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
     Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
+    Imagen: "https://images.sipse.com/qv7Yxbh1u0WBTSiZoYZLukJqSYY=/800x497/smart/2019/02/01/1549040913576.tif",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
     Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
+    Imagen: "https://inopcon.com/wp1/wp-content/uploads/2017/02/254.jpg",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
     Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
-    CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
-    "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
-  },
-  {
-    Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
-    CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
-    "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
-  },
-  {
-    Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
-    CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
-    "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
-  },
-  {
-    Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
-    CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
-    "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
-  },
-  {
-    Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
-    CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
-    "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
-  },
-  {
-    Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
-    CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
-    "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
-  },
-  {
-    Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
-    CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
-    "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
-  },
-  {
-    Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
-    Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
+    Imagen: "https://www.cktedificaciones.com/wp-content/uploads/2015/10/teatro.png",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },

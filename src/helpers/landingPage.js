@@ -3,7 +3,7 @@ module.exports.beneficios =
     {
         imagen:"",
         titulo:"Sin costo",
-        contenido:"El servicio es totalmente gratuito."
+        contenido:"El registro es totalmente gratuito."
     },
     {
         imagen:"",
@@ -18,7 +18,7 @@ module.exports.beneficios =
     {
         imagen:"",
         titulo:"Administra",
-        contenido:"Actualiza tu información documentos y contraseña."
+        contenido:"Actualiza tu información y documentos."
     }
 ]
 module.exports.cifras =
