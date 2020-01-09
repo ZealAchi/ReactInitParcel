@@ -21,7 +21,6 @@ import Proveedores from "../Pages/Auth/Proveedores/";
 import Constructoras from "../Pages/Auth/Constructoras";
 import CotizacionCrearProyecto from "../Pages/Auth/Proveedores/Cotizaciones/Proyecto/crear";
 import withSession from "../withSession";
-import Subastas from "../Pages/Subastas";
 import LandingPage from "../Pages/NoAuth/LandingPage";
 import Categorias from "../Pages/Auth/Categorias";
 
