@@ -1,54 +1,35 @@
-import React from 'react';
-import Fab from '@material-ui/core/Fab';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import clsx from 'clsx';
+import React, { useState } from 'react';
+import { Collapse, CardBody, Card } from 'reactstrap';
+import { Button } from 'antd';
+import { Column, Tag } from 'rbx'
 
-import AddIcon from '@material-ui/icons/Add';
-import EditIcon from '@material-ui/icons/Edit';
-import UpIcon from '@material-ui/icons/KeyboardArrowUp';
-import { green } from '@material-ui/core/colors';
-import Box from '@material-ui/core/Box';
-const useStyles = makeStyles(theme => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    width: 500,
-    position: 'relative',
-    minHeight: 200,
-  },
-  fab: {
-    position: 'absolute',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-  fabGreen: {
-    color: theme.palette.common.white,
-    backgroundColor: green[500],
-    '&:hover': {
-      backgroundColor: green[600],
-    },
-  },
-}));
-export default function Filtros({children}) {
-  const classes = useStyles();
-  const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+export default function Filtros({ children }) {
+  const [isOpen, setIsOpen] = useState(false);
 
-
-  const fabs = [
-    {
-      className: classes.fab,
-      icon: children,
-      label: 'Edit',
-    },
-  ];
+  const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className={classes.root}>
-      
-      {fabs.map(fab=><Fab aria-label={fab.label} className={fab.className} color={fab.color}>
-            {fab.icon}
-          </Fab>)
-      }
-      </div>
+    <div >
+      <Column.Group multiline centered breakpoint="mobile">
+        <Column>
+          <Button type="primary" size={'large'} onClick={toggle} style={{ marginBottom: '1rem' }}>
+            Graficar por Filtros
+      </Button></Column>
+        <Column style={{background:'#fff'}}>
+          Compras TOTALES
+      </Column>
+      </Column.Group>
+      <Collapse isOpen={isOpen}>
+        <Card>
+          <CardBody>
+            Anim pariatur cliche reprehenderit,
+             enim eiusmod high life accusamus terry richardson ad squid. Nihil
+             anim keffiyeh helvetica, craft beer labore wes anderson cred
+             nesciunt sapiente ea proident.
+          </CardBody>
+        </Card>
+      </Collapse>
+      {children}
+    </div>
   );
 }

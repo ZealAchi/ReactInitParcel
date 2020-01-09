@@ -51,35 +51,35 @@ const CrearGrafica = ({ Tipo, Datos }) => {
 }
 export default function () {
     return (<>
-        <Hero color="white">
-            <Hero.Body style={{ padding: 'initial "!important' }}>
-                <Container>
-                    <Column.Group multiline centered breakpoint="mobile">
-                    <Filtros><Button type="primary" size={'large'}>
-                Primary
-            </Button></Filtros>
-                        <Column>
-                            <CardReports >
-                                <Title>Semana</Title>
-                                <CrearGrafica Tipo={Semana} Datos={DataSemana} />
-                            </CardReports>
-                        </Column>
-                        <Column>
-                            <CardReports>
-                                <Title>Mes</Title>
-                                <CrearGrafica Tipo={Mes} Datos={DataMes} />
-                            </CardReports>
-                        </Column>
-                        <Column size={12}>
-                            <CardReports>
-                                <Title>Año</Title>
-                                <CrearGrafica Tipo={Año} Datos={DataAño} />
-                            </CardReports>
-                        </Column>
-                    </Column.Group>
-                </Container>
-            </Hero.Body>
-        </Hero>
+        <Filtros>
+            <Hero color="white">
+                <Hero.Body style={{ padding: 'initial "!important' }}>
+                    <Container>
+                        <Column.Group multiline centered breakpoint="mobile">
+                            <Column>
+                                <CardReports >
+                                    <Title>Semana</Title>
+                                    <CrearGrafica Tipo={Semana} Datos={DataSemana} />
+                                </CardReports>
+                            </Column>
+                            <Column>
+                                <CardReports>
+                                    <Title>Mes</Title>
+                                    <CrearGrafica Tipo={Mes} Datos={DataMes} />
+                                </CardReports>
+                            </Column>
+                            <Column size={12}>
+                                <CardReports>
+                                    <Title>Año</Title>
+                                    <CrearGrafica Tipo={Año} Datos={DataAño} />
+                                </CardReports>
+                            </Column>
+                        </Column.Group>
+                    </Container>
+                </Hero.Body>
+            </Hero>
+        </Filtros>
+
     </>)
 }
 

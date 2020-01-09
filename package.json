@@ -22,6 +22,7 @@
     "graphql": "^14.5.8",
     "jsonwebtoken": "^8.5.1",
     "mdbreact": "^4.24.0",
+    "moment": "^2.24.0",
     "parcel-bundler": "^1.12.4",
     "rbx": "^2.2.0",
     "react": "^16.12.0",
