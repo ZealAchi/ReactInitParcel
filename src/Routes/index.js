@@ -1,4 +1,4 @@
-import React, { memo, useContext, useEffect } from "react";
+import React, { memo, useContext, useEffect} from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -28,13 +28,12 @@ import Categorias from "../Pages/Auth/Categorias";
 // import AdminUsersCrete from "../Pages/Auth/Admin/Usuarios/crear";
 const Root = ({ refetch, session }) => {
   const Context = useContext(AuthContext)
-  const { isAuthenticated, typeUser, isAdmin: isAdministrator, setRefetch } = Context
+  const { isAuthenticated, typeUser, isAdmin: isAdministrator,setRefetch } = Context
   console.log("session", session)
-  if (session) {
-    useEffect(() => {
-      setRefetch(refetch, session)
-    }, [])
-  }
+  useEffect(()=>{
+    setRefetch(refetch, session)
+  },[])
+
   return (
     <div style={{ background: '#fff' }}>
       {/* <LandingPage/> */}

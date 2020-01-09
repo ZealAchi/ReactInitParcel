@@ -34,8 +34,8 @@ function AuthContextProvider(props, context) {
 
   }
   function setRefetch(value,data){
-    console.log(data.activeUser)
-    const {role="", name="",isAdmin="",lastName="",secondLastName=""}=data.activeUser
+    if(data.activeUser){
+    const  {role="", name="",isAdmin="",lastName="",secondLastName=""}=data.activeUser
     setState({
       ...state,
       refetch: value,
@@ -49,6 +49,7 @@ function AuthContextProvider(props, context) {
       secondLastName: secondLastName,
     })
   }
+}
   function handleSubmit(event, signupUser,history) {
     event.preventDefault();
 
@@ -70,7 +71,7 @@ function AuthContextProvider(props, context) {
           password:''
         });
 
-        await this.props.refetch();
+        await props.refetch();
 
         history.push('/')
       })
