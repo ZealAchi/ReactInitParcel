@@ -1,6 +1,8 @@
 import React from "react";
 import { Tabs } from 'antd';
 import Cotizaciones from './Cotizaciones';
+import Subastas from './Subastas';
+import Reportes from './Reportes';
 const { TabPane } = Tabs;
 
 export default function Constructoras(){
@@ -10,15 +12,11 @@ export default function Constructoras(){
       <TabPane tab="Contizaciones" key="1">
         <Cotizaciones/>
       </TabPane>
-      <TabPane tab="Maquinaria" key="2">
-        <p>Content of Tab Pane 2</p>
-        <p>Content of Tab Pane 2</p>
-        <p>Content of Tab Pane 2</p>
+      <TabPane tab="Subastas" key="2">
+      <Subastas/>
       </TabPane>
       <TabPane tab="Reportes" key="3">
-        <p>Content of Tab Pane 3</p>
-        <p>Content of Tab Pane 3</p>
-        <p>Content of Tab Pane 3</p>
+        <Reportes/>
       </TabPane>
     </Tabs>
   </div>

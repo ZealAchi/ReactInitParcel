@@ -19,8 +19,8 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const httpLink = createHttpLink({
-  // uri: "http://192.168.6.57:3001/graphql",
-  uri: "http://localhost:3001/graphql",
+  uri: "http://192.168.6.57:3001/graphql",
+  // uri: "http://localhost:3001/graphql",
 });
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
@@ -29,8 +29,8 @@ const client = new ApolloClient({
   
   onError: ({ networkError }) => {
     if (networkError) {
-      // console.log("Network Error", networkError);
-      toast.error('No se puedo establecer una conexión con el servidor!')
+      console.log("Network Error", networkError);
+      // toast.error('No se puedo establecer una conexión con el servidor!')
     }
   },
   headers: {

@@ -30,9 +30,9 @@ const Root = ({ refetch, session }) => {
   const Context = useContext(AuthContext)
   const { isAuthenticated, typeUser, isAdmin: isAdministrator,setRefetch } = Context
   console.log("session", session)
-  // useEffect(()=>{
-  //   setRefetch(refetch, session)
-  // },[])
+  useEffect(()=>{
+    setRefetch(refetch, session)
+  },[])
 
   return (
     <div style={{ background: '#fff' }}>

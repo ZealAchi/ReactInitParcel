@@ -21,11 +21,14 @@ query{
 const withSession = Component => props => (
   <Query query={GET_ACTIVE_USER}>
     {({ data, loading, refetch }) => {
-      if (loading) return (<>
-      Loading...
-      <img src={require('./assests/images/Loading.gif')} />
-      </>)
+      if (loading)  return( <div
+      style={{
+        textAlign: 'center',
+        height: 'inherit'
+      }}
+    > <img src={require('./assests/images/Loading.gif')} /></div>)
       return <Component {...props} refetch={refetch} session={data}/>;
+     
     }}
   </Query>
 );

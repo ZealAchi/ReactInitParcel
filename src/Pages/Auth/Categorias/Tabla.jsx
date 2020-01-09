@@ -10,7 +10,7 @@ import { Table } from 'uxcore';
 const { Constants } = Table;
 const mockData = {
     data: [
-],
+    ],
 };
 
 export default class Tabla extends React.Component {
@@ -110,17 +110,18 @@ export default class Tabla extends React.Component {
             jsxcolumns: columns,
             processData: data => data,
             onChange: me.handleTableChange,
-            emptyText:'No hay Datos'
+            emptyText: 'No hay Datos'
         };
 
         return (
             <div className="container">
-                <Table style={{  borderCollapse: 'collapse',
-  borderSpacing: 0,
-  width: '100%',
-  border:' 1px solid #ddd'
-  
-  }} {...renderProps} ref={(c) => { this.table = c; }} />
+                <Table style={{
+                    borderCollapse: 'collapse',
+                    borderSpacing: 0,
+                    width: '100%',
+                    border: ' 1px solid #ddd'
+
+                }} {...renderProps} ref={(c) => { this.table = c; }} />
                 <Button onClick={me.getTableValues.bind(me)} style={{ marginTop: '12px' }}>Obtener Datos de la Tabla</Button>
             </div>
         );

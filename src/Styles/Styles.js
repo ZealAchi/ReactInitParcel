@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Link} from 'react-router-dom' 
 
 export const LinkMenu = styled(Link)`
-  color: #e8e4e4;
+  color: #fff !important;
   display: block;
   margin: 0.5em 0;
   font-family: Helvetica, Arial, sans-serif;

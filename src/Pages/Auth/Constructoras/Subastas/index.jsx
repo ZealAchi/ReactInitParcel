@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Table, Divider, Tag, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { Hero, Container, Title, Column } from 'rbx'
@@ -18,7 +18,7 @@ export default function index() {
     // visible: false,
     // effect: 'fade',
   })
-  const {visible,effect,showComponent,handleChange}=useContext(EffectContext)
+  const { visible, effect, showComponent, handleChange } = useContext(EffectContext)
 
   // function showComponent() {
   //   setState({
@@ -39,24 +39,23 @@ export default function index() {
     <Hero color="white">
       <Hero.Body>
         <Container>
-          <Title>Mis Proyectos</Title>
+          <Title>Subastas</Title>
           <Title as="h2" subtitle>
-            Total de Proyectos:14
+            Total de Proyectos:123
       </Title>
           <Link to="/Cotizacion/Proyecto/Nuevo">
-            <Button type="primary">Crear Proyecto</Button>
+            <Button type="primary">Crear Subasta</Button>
           </Link>
           <Box>
             <Column.Group>
               <Column>
-
                 <Form className="demo-basic-form">
-                  Busca tu Proyecto
-            <Input jsxname="theme" jsxlabel="Busca tu Proyecto" jsxplaceholder="Escribe el nombre de tu Proyecto..." />
+                  Busca tu Subasta
+              <Input jsxname="theme" jsxlabel="Busca tu Subasta" jsxplaceholder="Escribe datos el nombre de la subasta..." />
                 </Form>
               </Column>
               <Column>
-                <Filtros showComponent={showComponent} handleChange={handleChange} state={{...state,visible,effect}}
+                <Filtros showComponent={showComponent} handleChange={handleChange} state={{ ...state, visible, effect }}
                 />
               </Column>
               <Column>
@@ -71,7 +70,6 @@ export default function index() {
 
             <Column.Group multiline centered style={{ width: '100%', textAlign: 'center', display: 'flex', justifyContent: 'space-between', alignItems: ' stretch', margin: '-1.8em 0px 1em' }} breakpoint="mobile">
               {GetAllProyectos.map((item, i) => <Column key={i+Math.random()}
-              
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -93,27 +91,25 @@ export default function index() {
 
 
 function Filters() {
-  const {visible}=useContext(EffectContext)
-   console.log(visible,visible?'muestrate':'oculatate')
+  const { visible } = useContext(EffectContext)
+  console.log(visible, visible ? 'muestrate' : 'oculatate')
   return (
-
-    <div class="container" style={{ background: 'transparent' , display: visible ? '' : 'none' }}>
+    <div class="container" style={{ background: 'transparent', display: visible ? '' : 'none' }}>
       <div class="notification">
         <Column.Group>
-          <Column >
-            <CustomizedRadios data={{ title: "Estatus del Proyecto", defaultValue: "0", data: [{ label: 'activo', value: '2' }, { label: 'Inactivo', value: '1' }, { label: 'Activos/Inactivos', value: '0' }] }} />
+          <Column>
+            <CustomizedRadios
+              data={{ title: "Estatus de las Subastas", defaultValue: "0", data: [{ label: 'activo', value: '2' }, { label: 'Inactivo', value: '1' }, { label: 'Activos/Inactivos', value: '0' }] }} />
           </Column>
           <Column>
-            <CustomizedRadios data={{ title: "Proyectos cotizados", defaultValue: "0", data: [{ label: 'Proyectos pendientes', value: '3' }, { label: 'Proyectos declinados', value: '2' }, { label: 'Proyectos aceptados', value: '1' }, { label: 'Todos los proyectos', value: '0' }] }} />
-            
-          <Column.Group>
-          <Column>
-          {/* Datos de la constructora */}
-          </Column>
-          <Column>
-          {/* Ordexxxn de compra */}
-          </Column>
-          </Column.Group>    
+            <Column.Group>
+              <Column>
+                {/* Datos de la constructora */}
+              </Column>
+              <Column>
+                {/* Ordexxxn de compra */}
+              </Column>
+            </Column.Group>
 
 
           </Column>
@@ -125,8 +121,6 @@ function Filters() {
         </Column.Group>
       </div>
     </div>
-
-
 
   );
 
