@@ -83,8 +83,8 @@ function AuthContextProvider(props, context) {
             console.log(error)
           }
         } catch (error) {
-          toast.error('No se pudo establecer una conexión segura con el servidor!');
-          // console.log(error);
+          // toast.error('No se pudo establecer una conexión segura con el servidor!');
+          console.log(error);
         }
       });
   }
