@@ -9,6 +9,7 @@ import { Box } from '@material-ui/core';
 import { Column, Hero, Divider } from 'rbx';
 import { Uploader } from 'uxcore';
 import Item from "./../Proyecto/item";
+import PreviewProyect from './previewProyect';
 
 const { Step } = Steps;
 const { Dragger } = Upload;
@@ -467,22 +468,12 @@ const props = {
 
 
 
-const Datos = [{
-  Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-  Descripción: "Gendra tiene como finalidad.....",
-  Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
-  CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
-  "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
-}]
-
 function Vizualizar() {
-  const item = Datos[0]
-  console.log(item)
-  console.log(Datos)
-  return (<Column.Group centered>
-    <Column size="three-fifths">
-    <Item item={item} crear={'crear'} />
-    </Column>
+  return (
+    <Column.Group centered>
+      <Column size="three-fifths">
+      <PreviewProyect/>
+      </Column>
     </Column.Group>
   )
 }
