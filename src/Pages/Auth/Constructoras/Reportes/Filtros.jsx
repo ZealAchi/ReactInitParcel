@@ -20,36 +20,36 @@ export default function Filtros({ children }) {
         <Card>
           <CardBody>
 
-          <Notification  textAlign="centered">
+            <Notification textAlign="centered">
 
-            <Tile kind="ancestor">
-              <Tile kind="parent">
-                <Tile as={Box} kind="child">
-                  <Calendar label="Filtar Por Mes:" placeholder="Selecciona un Mes" />
+              <Tile kind="ancestor">
+                <Tile kind="parent">
+                  <Tile as={Box} kind="child">
+                    <Calendar label="Filtar Por Mes:" placeholder="Selecciona un Mes" />
+                  </Tile>
                 </Tile>
-              </Tile>
-              <Tile kind="parent">
-                <Tile as={Box} kind="child">
+                <Tile kind="parent">
+                  <Tile as={Box} kind="child">
 
-                  <AutoCompletar dataSource={Pais} placeholder="Escribe un Pais" label="Pais" />
+                    <AutoCompletar dataSource={Pais} placeholder="Escribe un Pais" label="Pais" />
+                  </Tile>
+                </Tile>
+                <Tile kind="parent">
+                  <Tile as={Box} kind="child">
+                    <AutoCompletar dataSource={Estado} placeholder="Escribe un Estado" label="Estado" />
+                  </Tile>
                 </Tile>
               </Tile>
-              <Tile kind="parent">
-                <Tile as={Box} kind="child">
-                  <AutoCompletar dataSource={Estado} placeholder="Escribe un Estado" label="Estado" />
-                </Tile>
-              </Tile>
-            </Tile>
-</Notification>
+            </Notification>
 
             <Column.Group>
               <Column>
-                <Notification  textAlign="centered">
+                <Notification textAlign="centered">
                   <AutoCompletar dataSource={Proveedor} placeholder="Escribe un Proveedor" label="Proveedor" />
                 </Notification>
               </Column>
               <Column>
-                <Notification  textAlign="centered">
+                <Notification textAlign="centered">
                   <AutoCompletar dataSource={Material} placeholder="Escribe un Material" label="Materiales" />
                 </Notification>
               </Column>

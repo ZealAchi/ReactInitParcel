@@ -33,91 +33,91 @@ export function ListarProyectos() {
 const GetAllProyectos = [
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
     },
     {
         Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-        Descripción: "Gendra tiene como finalidad.....",
+        Descripción: "Gendra  tiene como finalidad.....",
         Imagen: "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
         CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
         "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]

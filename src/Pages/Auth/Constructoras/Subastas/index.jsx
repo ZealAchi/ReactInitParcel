@@ -130,42 +130,42 @@ function Filters() {
 const GetAllProyectos = [
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
+    Descripción: "Gendra  tiene como finalidad.....",
     Imagen: "http://www.rabbsconstruction.com/images/construction-contractors.jpg",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
+    Descripción: "Gendra  tiene como finalidad.....",
     Imagen: "https://rgbcltd.files.wordpress.com/2018/10/commercial-construction.jpg?w=660",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
+    Descripción: "Gendra  tiene como finalidad.....",
     Imagen: "http://fnbe0315darrentan.weebly.com/uploads/5/0/6/7/50679395/3316314_orig.jpg",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
+    Descripción: "Gendra  tiene como finalidad.....",
     Imagen: "https://images.sipse.com/qv7Yxbh1u0WBTSiZoYZLukJqSYY=/800x497/smart/2019/02/01/1549040913576.tif",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
+    Descripción: "Gendra  tiene como finalidad.....",
     Imagen: "https://inopcon.com/wp1/wp-content/uploads/2017/02/254.jpg",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]
   },
   {
     Proyecto: "Gendra", Finalización: Date.now().toString(), UbicaciónEntrega: "Ixmiquilpan",
-    Descripción: "Gendra tiene como finalidad.....",
+    Descripción: "Gendra  tiene como finalidad.....",
     Imagen: "https://www.cktedificaciones.com/wp-content/uploads/2015/10/teatro.png",
     CondicionesPago: [{ Anticipo: "12", ContraEntrega: "39", CreditoPorDias: "2", }],
     "Materiales/Lotes": [{ Categoria: "www", "NombreMaterial/Lote": "dsad", FechaLimite: Date.now().toString(), Cantidad: 20, UnidadMedida: "Unidad", planos: [] }]

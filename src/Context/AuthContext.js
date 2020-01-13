@@ -4,19 +4,19 @@ import { toast } from "react-toastify";
 import client from "../apolloClient";
 
 export const AuthContext = createContext();
-const DataInit={
+const DataInit = {
   isAuthenticated: false,
   isAdmin: false,
   isMaster: false,
   name: "",
   lastName: "",
   token: "",
-  user:"luis@mail.com",
+  user: "luis@mail.com",
   password: "127as127",
   typeUser: "",
   user: "",
-  refetch:()=>{},
-  session:[]
+  refetch: () => { },
+  session: []
 }
 function AuthContextProvider(props, context) {
   const { children } = props;
@@ -28,29 +28,29 @@ function AuthContextProvider(props, context) {
     if (name === "password") setState({ ...state, password: valor });
   }
   function logout() {
-    localStorage.setItem("token",'');
-    setState({...DataInit});
+    localStorage.setItem("token", '');
+    setState({ ...DataInit });
     client.clearStore()
 
   }
-  function setRefetch(value,data){
-    if(data.activeUser){
-    const  {role="", name="",isAdmin="",lastName="",secondLastName=""}=data.activeUser
-    setState({
-      ...state,
-      refetch: value,
-      session:data,
-      token: localStorage.getItem('token'),
-      isAuthenticated: name?true:false,
-      isAdmin: isAdmin,
-      typeUser: role,
-      name: name,
-      lastName: lastName,
-      secondLastName: secondLastName,
-    })
+  function setRefetch(value, data) {
+    if (data.activeUser) {
+      const { role = "", name = "", isAdmin = "", lastName = "", secondLastName = "" } = data.activeUser
+      setState({
+        ...state,
+        refetch: value,
+        session: data,
+        token: localStorage.getItem('token'),
+        isAuthenticated: name ? true : false,
+        isAdmin: isAdmin,
+        typeUser: role,
+        name: name,
+        lastName: lastName,
+        secondLastName: secondLastName,
+      })
+    }
   }
-}
-  function handleSubmit(event, signupUser,history) {
+  function handleSubmit(event, signupUser, history) {
     event.preventDefault();
 
     signupUser()
@@ -67,8 +67,8 @@ function AuthContextProvider(props, context) {
           name: decoded.name,
           lastName: decoded.lastName,
           secondLastName: decoded.secondLastName,
-          user:'',
-          password:''
+          user: '',
+          password: ''
         });
 
         await props.refetch();
@@ -77,10 +77,10 @@ function AuthContextProvider(props, context) {
       })
       .catch(error => {
         try {
-          
-          if(error.graphQLErrors[0].message){
+
+          if (error.graphQLErrors[0].message) {
             toast.error(error.graphQLErrors[0].message);
-          }else{
+          } else {
             console.log(error)
           }
         } catch (error) {
@@ -90,44 +90,9 @@ function AuthContextProvider(props, context) {
       });
   }
 
-  // function handleSubmit(){
-  //   if(state.user==='juan'&&state.password==="12345678"){
-  //     toast.success("Bienvenido " + state.user + ".");
-  //     setState({
-  //       ...state,
-  //       token:Math.random(),
-  //       typeUser:'Constructora',
-  //       isAdministrator:false,
-  //       isAuthenticated:!state.isAuthenticated
-  //     });
-  //   }else
-  //   if(state.user==='jose'&&state.password==="12345678"){
-  //     toast.success("Bienvenido " + state.user + ".");
-  //     setState({
-  //       ...state,
-  //       token:Math.random(),
-  //       typeUser:'Proveedor',
-  //       isAdministrator:false,
-  //       isAuthenticated:!state.isAuthenticated
-  //     });
-  //   }else
-  //   if(state.user==='luis'&&state.password==="12345678"){
-  //     toast.success("Bienvenido " + state.user + ".");
-  //     setState({
-  //       ...state,
-  //       token:Math.random(),
-  //       typeUser:'Proveedor',
-  //       isAdministrator:true,
-  //       isAuthenticated:!state.isAuthenticated
-  //     });
-  //   }else{
-  //     toast.error("Algo salio mal.");
-  //   }
-  // }
-
   return (
     <AuthContext.Provider
-      value={{ ...state, handleChange: handleChange, handleSubmit, logout,setRefetch:setRefetch }}
+      value={{ ...state, handleChange: handleChange, handleSubmit, logout, setRefetch: setRefetch }}
     >
       {children}
     </AuthContext.Provider>
