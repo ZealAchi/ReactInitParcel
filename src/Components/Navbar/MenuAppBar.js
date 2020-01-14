@@ -198,9 +198,9 @@ export default function MenuAppBar() {
                 <LinkMenu to="/blog">
                   <Button color="inherit" >Blog</Button>
                 </LinkMenu>
-                <LinkMenu to="/DashBoard">
+                {/* <LinkMenu to="/DashBoard">
                   <Button color="inherit" >Mi DashBoard</Button>
-                </LinkMenu>
+                </LinkMenu> */}
                 <Notification/>
                 <IconButton
                   edge="end"

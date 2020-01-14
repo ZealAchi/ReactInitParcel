@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Button as ButtonA } from 'antd';
 import { Button, Box } from '@material-ui/core';
 import styled from "styled-components";
-import { VectorMap } from '@south-paw/react-vector-maps';
+import { VectorMap } from '@GS/Mapita2'
 
 import worldLowRes from '../../Maps/world.json'
 import Mexico from '../../Maps/mexico.json'
@@ -75,7 +75,7 @@ export default function () {
 
 
 const MapNew = styled(VectorMap)`
-/* ${props => console.log(props.layers)} */
+
 `
 const Map = styled.div`
   margin: 1rem auto;

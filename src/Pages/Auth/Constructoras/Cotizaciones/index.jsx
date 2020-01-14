@@ -39,10 +39,10 @@ export default function index() {
     <Hero color="white">
       <Hero.Body>
         <Container>
-          <Title>Mis Proyectos</Title>
+          <Title>Proyectos</Title>
           <Title as="h2" subtitle>
-            Total de Proyectos:14
-      </Title>
+            {/* Total de Proyectos:14 */}
+        </Title>
           <Link to="/Cotizacion/Proyecto/Nuevo">
             <Button type="primary">Crear Proyecto</Button>
           </Link>
@@ -101,10 +101,10 @@ function Filters() {
       <div class="notification">
         <Column.Group>
           <Column >
-            <CustomizedRadios data={{ title: "Estatus del Proyecto", defaultValue: "0", data: [{ label: 'activo', value: '2' }, { label: 'Inactivo', value: '1' }, { label: 'Activos/Inactivos', value: '0' }] }} />
+            {/* <CustomizedRadios data={{ title: "Estatus del Proyecto", defaultValue: "0", data: [{ label: 'activo', value: '2' }, { label: 'Inactivo', value: '1' }, { label: 'Activos/Inactivos', value: '0' }] }} /> */}
           </Column>
           <Column>
-            <CustomizedRadios data={{ title: "Proyectos cotizados", defaultValue: "0", data: [{ label: 'Proyectos pendientes', value: '3' }, { label: 'Proyectos declinados', value: '2' }, { label: 'Proyectos aceptados', value: '1' }, { label: 'Todos los proyectos', value: '0' }] }} />
+            {/* <CustomizedRadios data={{ title: "Proyectos cotizados", defaultValue: "0", data: [{ label: 'Proyectos pendientes', value: '3' }, { label: 'Proyectos declinados', value: '2' }, { label: 'Proyectos aceptados', value: '1' }, { label: 'Todos los proyectos', value: '0' }] }} /> */}
             
           <Column.Group>
           <Column>

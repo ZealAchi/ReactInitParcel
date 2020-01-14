@@ -33,7 +33,6 @@ function DataContextForProveedoresProvider(props, context) {
         const name = attributes.name.value;
         toast.success("Has seleccionado " + name + ".");
         setState({ ...state, estado: name })
-
     }
     const layerPropsPais = {
         onMouseEnter: ({ target }) => setState({ ...state, hovered: target.attributes.name.value }),
