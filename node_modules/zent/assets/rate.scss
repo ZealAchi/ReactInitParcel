@@ -1,0 +1,67 @@
+@import './theme/default';
+@import './theme/font';
+
+.zent-rate {
+  // sass-lint:disable no-duplicate-properties
+  color: $rate-star-color;
+  color: var(--rate-star-color, $rate-star-color);
+  // sass-lint:enable no-duplicate-properties
+  display: inline-block;
+  outline: none;
+  font-size: $font-size-large;
+
+  &-star {
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &-first {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      opacity: 0;
+    }
+
+    &-zero {
+      @include theme-color(color, stroke, 6);
+    }
+
+    &-half,
+    &-part {
+      .zent-rate-star-first {
+        opacity: 1;
+      }
+
+      .zent-rate-star-second {
+        @include theme-color(color, stroke, 6);
+      }
+    }
+  }
+
+  &-disabled,
+  &-readonly {
+    .zent-rate-star {
+      cursor: not-allowed;
+      transition: none;
+
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &-readonly {
+    .zent-rate-star {
+      cursor: auto;
+    }
+  }
+}

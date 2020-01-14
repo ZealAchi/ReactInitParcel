@@ -1,0 +1,542 @@
+@import './theme/default';
+@import './theme/font';
+
+@mixin cart-color {
+  @include theme-color(color, stroke, 1);
+}
+
+@mixin error-color($prop) {
+  @include theme-color($prop, error, 2);
+}
+
+@mixin bg-color($prop) {
+  @include theme-color($prop, stroke, 8);
+}
+
+@mixin current-bg-color($prop) {
+  @include theme-color($prop, primary, 4);
+}
+
+@mixin icon-color($prop) {
+  @include theme-color($prop, stroke, 4);
+}
+
+.zent-steps {
+  width: 100%;
+  line-height: 1.5;
+  font-size: 0;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.zent-steps-tail {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 13px;
+  box-sizing: border-box;
+  margin-left: 75px;
+
+  i {
+    @include theme-color(background-color, stroke, 7);
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    border-radius: 1px;
+    height: 2px;
+    vertical-align: top;
+
+    &::after {
+      @include theme-color(background-color, stroke, 7);
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 100%;
+      opacity: 0;
+    }
+  }
+}
+
+.zent-steps-step {
+  position: relative;
+
+  .zent-step-head {
+    @include theme-color(background-color, stroke, 9);
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 60px;
+    box-sizing: border-box;
+  }
+
+  .zent-step-main {
+    @include theme-color(color, stroke, 3);
+    position: relative;
+    vertical-align: top;
+    width: 160px;
+    text-align: center;
+
+    .zent-step-title {
+      font-size: $font-size-normal;
+      max-width: 160px;
+      line-height: 14px;
+      margin-top: 10px;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+
+    .zent-step-description {
+      max-width: 160px;
+      font-size: $font-size-small;
+      line-height: 16px;
+      margin-top: 8px;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+  }
+}
+
+.zent-step-head-inner {
+  @include icon-color(color);
+  margin: 0 8px;
+  font-size: 24px;
+  line-height: 24px;
+
+  .zent-icon {
+    @include icon-color(background-color);
+    @include theme-color(color, stroke, 9);
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: $font-size-normal;
+  }
+
+  .zenticon {
+    vertical-align: middle;
+  }
+}
+
+.zent-steps-item {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  overflow: visible;
+  flex: 1;
+
+  &.zent-steps-status-finish {
+    &.is-current {
+      .zent-steps-tail {
+        i {
+          &::after {
+            width: 0;
+          }
+        }
+      }
+    }
+
+    &.is-last-finish {
+      .zent-steps-tail {
+        i {
+          &::after {
+            @include error-color(background-color);
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .zent-step-head-inner {
+      @include current-bg-color(color);
+
+      .zent-icon {
+        @include current-bg-color(background-color);
+      }
+    }
+
+    .zent-step-main {
+      .zent-step-title {
+        @include theme-color(color, stroke, 1);
+      }
+    }
+
+    .zent-steps-tail {
+      i {
+        &::after {
+          @include current-bg-color(background-color);
+          width: 100%;
+          transition: all 0.2s ease;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.zent-steps-status-error {
+    .zent-step-head-inner {
+      @include error-color(color);
+    }
+
+    .zent-step-main {
+      .zent-step-title {
+        @include error-color(color);
+      }
+    }
+  }
+
+  &.zent-steps-status-process {
+    .zent-step-head-inner {
+      .zent-icon {
+        @include current-bg-color(background-color);
+      }
+    }
+
+    .zent-step-main {
+      .zent-step-title {
+        @include theme-color(color, stroke, 1);
+      }
+    }
+  }
+
+  &:last-child {
+    flex: none;
+
+    .zent-steps-tail {
+      display: none;
+    }
+  }
+}
+
+.zent-steps__vertical {
+  display: block;
+
+  .zent-steps-item {
+    display: block;
+    overflow: visible;
+
+    &.zent-steps-status-finish {
+      &.is-current {
+        .zent-steps-tail {
+          i {
+            &::after {
+              width: 100%;
+              height: 0;
+            }
+          }
+        }
+      }
+
+      &.is-last-finish {
+        .zent-steps-tail {
+          i {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .zent-steps-tail {
+        i {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      .zent-steps-step {
+        .zent-step-main {
+          min-height: auto;
+        }
+      }
+    }
+  }
+
+  .zent-steps-tail {
+    position: absolute;
+    margin-left: 0;
+    width: 2px;
+    left: 18px;
+    top: 0;
+    height: 100%;
+    padding: 30px 0 4px;
+
+    i {
+      height: 100%;
+      width: 2px;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .zent-steps-step {
+    .zent-step-head {
+      float: left;
+      margin-left: 0;
+    }
+
+    .zent-step-main {
+      display: block;
+      overflow: hidden;
+      min-height: 120px;
+      text-align: left;
+      width: inherit;
+      padding-left: 5px;
+
+      .zent-step-title {
+        margin-top: 2px;
+        line-height: 22px;
+        max-width: initial;
+      }
+
+      .zent-step-description {
+        margin-top: 2px;
+        padding-bottom: 15px;
+        max-width: initial;
+      }
+    }
+  }
+
+  .zent-step-head-inner {
+    margin-right: 8px;
+  }
+}
+
+.zent-steps-card {
+  .zent-steps-item {
+    box-sizing: border-box;
+    padding: 0 1px;
+
+    &.is-clicked {
+      cursor: pointer;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    .zent-steps-step {
+      @include cart-color;
+      @include bg-color(background-color);
+      height: 50px;
+      line-height: 50px;
+      font-size: $font-size-normal;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 0 10px;
+    }
+
+    &.is-current {
+      &:hover {
+        .zent-steps-step {
+          @include theme-color(background-color, primary, 5);
+        }
+      }
+
+      &:active {
+        .zent-steps-step {
+          @include theme-color(background-color, primary, 3);
+        }
+      }
+
+      .zent-steps-step {
+        @include current-bg-color(background-color);
+        @include theme-color(color, stroke, 9);
+      }
+    }
+  }
+}
+
+.zent-steps-breadcrumb {
+  overflow: hidden;
+
+  .zent-steps-item {
+    padding: 0 8px;
+    box-sizing: border-box;
+
+    &.is-clicked {
+      cursor: pointer;
+    }
+
+    &:first-child {
+      padding-left: 0;
+
+      .zent-steps-step {
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      .zent-steps-step {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .zent-steps-step {
+      @include cart-color;
+      @include bg-color(background-color);
+      height: 48px;
+      line-height: 48px;
+      font-size: $font-size-normal;
+      text-align: center;
+      padding: 0 10px;
+
+      &::after {
+        @include bg-color(border-left-color);
+        content: ' ';
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 24px solid transparent;
+        border-bottom: 24px solid transparent;
+        border-left-width: 12px;
+        border-left-style: solid;
+        position: absolute;
+        top: 50%;
+        margin-top: -24px;
+        right: -12px;
+      }
+
+      &::before {
+        @include bg-color(border-top-color);
+        @include bg-color(border-bottom-color);
+        content: ' ';
+        display: block;
+        width: 0;
+        height: 0;
+        border-top-width: 24px;
+        border-top-style: solid;
+        border-bottom-width: 24px;
+        border-bottom-style: solid;
+        border-left: 12px solid transparent;
+        position: absolute;
+        top: 50%;
+        margin-top: -24px;
+        left: -12px;
+      }
+    }
+
+    &.is-finish {
+      &:hover {
+        .zent-steps-step {
+          @include theme-color(background-color, primary, 5);
+
+          &::after {
+            @include theme-color(border-left-color, primary, 5);
+          }
+
+          &::before {
+            @include theme-color(border-top-color, primary, 5);
+            @include theme-color(border-bottom-color, primary, 5);
+          }
+        }
+      }
+
+      &:active {
+        .zent-steps-step {
+          @include theme-color(background-color, primary, 3);
+
+          &::after {
+            @include theme-color(border-left-color, primary, 3);
+          }
+
+          &::before {
+            @include theme-color(border-top-color, primary, 3);
+            @include theme-color(border-bottom-color, primary, 3);
+          }
+        }
+      }
+
+      .zent-steps-step {
+        @include current-bg-color(background-color);
+        @include theme-color(color, stroke, 9);
+
+        &::after {
+          @include current-bg-color(border-left-color);
+        }
+
+        &::before {
+          @include current-bg-color(border-top-color);
+          @include current-bg-color(border-bottom-color);
+        }
+      }
+    }
+  }
+}
+
+.zent-steps-tabs {
+  position: relative;
+
+  .zent-steps-item {
+    @include theme-color(color, stroke, 8);
+    @include theme-color(color, stroke, 1);
+    @include theme-color(border-right-color, stroke, 5);
+    @include theme-color(border-top-color, stroke, 5);
+    @include theme-color(border-bottom-color, stroke, 5);
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+
+    &.is-clicked {
+      cursor: pointer;
+    }
+
+    &:first-child {
+      @include theme-color(border-left-color, stroke, 5);
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+
+    .zent-steps-step {
+      height: 46px;
+      line-height: 46px;
+      font-size: $font-size-normal;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 0 10px;
+    }
+
+    &.is-current {
+      @include theme-color(background-color, stroke, 9);
+      border-bottom-color: transparent;
+    }
+
+    &:not(.is-current) {
+      &:hover {
+        @include theme-color(background-color, stroke, 11);
+      }
+
+      &:active {
+        @include theme-color(background-color, stroke, 10);
+      }
+    }
+  }
+}

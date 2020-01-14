@@ -1,0 +1,1 @@
+{"version":3,"file":"exotic.js","sourceRoot":"","sources":["../../src/base/exotic.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAgE1B,MAAM,UAAU,YAAY,CAI1B,OAGC,EACD,YAMC;IAED,MAAM,OAAO,GAAG,KAAK,CAAC,UAAU,CAAC,OAAO,CAAC,CAAC;IACzC,OAAe,CAAC,YAAY,GAAG,YAAY,CAAC;IAE7C,OAAO,OAAoE,CAAC;AAC9E,CAAC"}

@@ -1,0 +1,13 @@
+@import './theme/default';
+@import './theme/font';
+
+.zent-error-boundary-fallback-component {
+  &__error {
+    @include theme-color(color, error, 2);
+    font-size: $font-size-normal;
+
+    .zenticon-error-circle {
+      margin-right: 5px;
+    }
+  }
+}

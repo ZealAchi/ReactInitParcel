@@ -1,0 +1,98 @@
+@import './theme/default';
+@import './theme/font';
+@import './theme/timing-functions';
+
+@mixin collapse-border($pos) {
+  @include theme-color(#{border-#{$pos}-color}, stroke, 6);
+  border-#{$pos}-width: 1px;
+  border-#{$pos}-style: solid;
+}
+
+$content-padding-h: 36px;
+
+.zent-collapse {
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &--has-border {
+    @include collapse-border(top);
+    @include collapse-border(bottom);
+
+    .zent-collapse-panel__title {
+      @include collapse-border(left);
+      @include collapse-border(right);
+    }
+
+    .zent-collapse-panel__content-box {
+      padding: 0 $content-padding-h + 1px; // Add 1px border
+    }
+  }
+}
+
+.zent-collapse-panel {
+  box-sizing: border-box;
+
+  &__title {
+    @include font-normal;
+    @include collapse-border(bottom);
+    @include theme-color(color, stroke, 1);
+
+    padding: 14px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &--bg-default {
+      @include theme-color(background-color, stroke, 8);
+    }
+
+    &--bg-none {
+      @include theme-color(background-color, stroke, 9);
+    }
+  }
+
+  &__content-box {
+    @include font-normal;
+    @include theme-color(background-color, stroke, 9);
+    @include collapse-border(bottom);
+
+    padding: 0 $content-padding-h;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  &__content {
+    @include theme-color(color, stroke, 1);
+    padding: 16px 0;
+  }
+
+  &__arrow {
+    @include theme-color(fill, stroke, 1);
+    margin-right: 10px;
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: transform 160ms $timing-fn-ease-in-out;
+  }
+
+  &--inactive {
+    .zent-collapse-panel__arrow {
+      transform: rotate(0deg);
+    }
+  }
+
+  &--disabled {
+    .zent-collapse-panel__arrow {
+      @include theme-color(fill, stroke, 4);
+    }
+
+    .zent-collapse-panel__title {
+      @include theme-color(color, stroke, 4);
+      cursor: not-allowed;
+    }
+  }
+
+  &--animating {
+    user-select: none;
+  }
+}

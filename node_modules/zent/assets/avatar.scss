@@ -1,0 +1,88 @@
+@import './theme/default';
+@import './theme/font';
+
+$avatar-size-small: 24px;
+$avatar-size-default: 32px;
+$avatar-size-large: 40px;
+
+.zent-avatar {
+  @include theme-color(color, stroke, 9);
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: default;
+  overflow: hidden;
+  position: relative;
+  font-size: $font-size-large;
+
+  &--size-default {
+    width: $avatar-size-default;
+    height: $avatar-size-default;
+    line-height: $avatar-size-default;
+  }
+
+  &--size-small {
+    width: $avatar-size-small;
+    height: $avatar-size-small;
+    line-height: $avatar-size-small;
+  }
+
+  &--size-large {
+    width: $avatar-size-large;
+    height: $avatar-size-large;
+    line-height: $avatar-size-large;
+  }
+
+  &--type-image {
+    background: transparent;
+
+    .zent-avatar-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &--type-string {
+    @include theme-color(background-color, stroke, 5);
+
+    .zent-avatar-string {
+      font-weight: 500;
+    }
+
+    &.zent-avatar--size-small {
+      font-size: $font-size-normal;
+    }
+
+    &.zent-avatar--size-large {
+      font-size: 18px;
+    }
+  }
+
+  &--type-icon {
+    @include theme-color(background-color, stroke, 5);
+    font-size: 18px;
+
+    &.zent-avatar--size-small {
+      font-size: $font-size-normal;
+    }
+
+    &.zent-avatar--size-large {
+      font-size: 24px;
+    }
+  }
+
+  &--shape-circle {
+    border-radius: 50%;
+  }
+
+  &--shape-square {
+    border-radius: 4px;
+  }
+
+  &--bordered {
+    @include theme-color(border-color, stroke, 4);
+    border-width: 1px;
+    border-style: solid;
+  }
+}

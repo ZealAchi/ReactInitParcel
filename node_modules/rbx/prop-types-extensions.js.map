@@ -1,0 +1,1 @@
+{"version":3,"file":"prop-types-extensions.js","sourceRoot":"","sources":["../src/prop-types-extensions.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,YAAY,CAAC;AAEnC,MAAM,CAAC,MAAM,kBAAkB,GAAG,SAAS,CAAC,SAAS,CAAC;IACpD,SAAS,CAAC,IAAI;IACd,SAAS,CAAC,MAAM;IAChB,SAAS,CAAC,KAAK,CAAC,EAAE,MAAM,EAAE,SAAS,CAAC,IAAI,CAAC,UAAU,EAAE,CAAC;CACvD,CAAC,CAAC"}

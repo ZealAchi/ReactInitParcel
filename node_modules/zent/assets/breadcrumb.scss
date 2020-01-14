@@ -1,0 +1,80 @@
+@import './theme/default';
+@import './theme/font';
+
+.zent-breadcrumb {
+  @include theme-color(color, stroke, 3);
+  font-size: 0;
+  line-height: 0;
+  padding: 15px 0;
+
+  span,
+  a {
+    font-size: $font-size-normal;
+    line-height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+
+    &::after {
+      @include theme-color(color, stroke, 3);
+      content: '/';
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    &:last-child {
+      &::after {
+        content: '';
+        display: none;
+      }
+    }
+  }
+
+  span {
+    @include theme-color(color, stroke, 1);
+    cursor: default;
+  }
+
+  a {
+    @include theme-color(color, stroke, 3);
+
+    &:hover {
+      @include theme-color(color, primary, 4);
+    }
+  }
+
+  &.zent-breadcrumb-nav {
+    padding: 0;
+
+    a {
+      @include theme-color(color, stroke, 3);
+      display: inline-block;
+      height: 50px;
+      line-height: 48px;
+      padding: 0 20px;
+      min-width: 0;
+      border: 0;
+      background: transparent;
+      font-size: $font-size-normal;
+      text-align: center;
+      box-sizing: border-box;
+
+      &:hover {
+        @include theme-color(color, stroke, 4);
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+
+    .zent-breadcrumb-nav-active {
+      &:after {
+        @include theme-color(color, stroke, 4);
+        display: block;
+        content: '';
+        margin: 0;
+      }
+    }
+  }
+}

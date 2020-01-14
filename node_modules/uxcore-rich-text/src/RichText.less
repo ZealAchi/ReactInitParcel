@@ -1,0 +1,361 @@
+.mce-content-body div.mce-resizehandle {
+  position: absolute;
+  border: 1px solid black;
+  background: #FFF;
+  width: 7px;
+  height: 7px;
+  z-index: 10000
+}
+
+.mce-content-body .mce-resizehandle:hover {
+  background: #000
+}
+
+.mce-content-body img[data-mce-selected],
+hr[data-mce-selected] {
+  outline: 1px solid black;
+  resize: none
+}
+
+.mce-content-body .mce-clonedresizable {
+  position: absolute;
+  outline: 1px dashed black;
+  opacity: .5;
+  filter: alpha(opacity=50);
+  z-index: 10000
+}
+
+.mce-content-body .mce-resize-helper {
+  background: #555;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 3px;
+  border: 1px;
+  color: white;
+  display: none;
+  font-family: sans-serif;
+  font-size: 12px;
+  white-space: nowrap;
+  line-height: 14px;
+  margin: 5px 10px;
+  padding: 5px;
+  position: absolute;
+  z-index: 10001
+}
+
+.mce-content-body .mce-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: top;
+  background: transparent;
+  text-decoration: none;
+  color: black;
+  font-family: Arial;
+  font-size: 11px;
+  text-shadow: none;
+  float: none;
+  position: static;
+  width: auto;
+  height: auto;
+  white-space: nowrap;
+  cursor: inherit;
+  line-height: normal;
+  font-weight: normal;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  direction: ltr;
+  max-width: none
+}
+
+.mce-preview-object {
+  display: inline-block;
+  position: relative;
+  margin: 0 2px 0 2px;
+  line-height: 0;
+  border: 1px solid gray
+}
+
+.mce-preview-object .mce-shim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+}
+
+figure.align-left {
+  float: left
+}
+
+figure.align-right {
+  float: right
+}
+
+figure.image.align-center {
+  display: table;
+  margin-left: auto;
+  margin-right: auto
+}
+
+figure.image {
+  display: inline-block;
+  border: 1px solid gray;
+  margin: 0 2px 0 1px;
+  background: #f5f2f0
+}
+
+figure.image img {
+  margin: 8px 8px 0 8px
+}
+
+figure.image figcaption {
+  margin: 6px 8px 6px 8px;
+  text-align: center
+}
+
+.mce-preview-object[data-mce-selected="2"] .mce-shim {
+  display: none
+}
+
+.mce-pagebreak {
+  cursor: default;
+  display: block;
+  width: 100%;
+  height: 5px;
+  border: 1px dashed #666;
+  margin-top: 15px;
+  page-break-before: always
+}
+
+.mce-nbsp,
+.mce-shy {
+  background: #aaa
+}
+
+.mce-shy::after {
+  content: '-'
+}
+
+hr {
+  cursor: default
+}
+
+.mce-match-marker {
+  background: #aaa;
+  color: #fff
+}
+
+.mce-match-marker-selected {
+  background: #39f;
+  color: #fff
+}
+
+.mce-spellchecker-word {
+  border-bottom: 2px solid #f00;
+  cursor: default
+}
+
+.mce-spellchecker-grammar {
+  border-bottom: 2px solid #008000;
+  cursor: default
+}
+
+.mce-edit-focus {
+  outline: 1px dotted #333
+}
+
+.mce-content-body *[contentEditable=false] *[contentEditable=true]:focus {
+  outline: 2px solid #2d8ac7
+}
+
+.mce-content-body *[contentEditable=false] *[contentEditable=true]:hover {
+  outline: 2px solid #7acaff
+}
+
+.mce-content-body *[contentEditable=false][data-mce-selected] {
+  outline: 2px solid #2d8ac7
+}
+
+.mce-resize-bar-dragging {
+  background-color: blue;
+  opacity: .25;
+  filter: alpha(opacity=25);
+  zoom: 1
+}
+
+.mce-content-body {
+  td,
+  th {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px
+  }
+  td,
+  th,
+  caption {
+    border: 1px solid #bbb
+  }
+  td[data-mce-selected],
+  th[data-mce-selected] {
+    background-color: #39f !important
+  }
+  * {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+    font-weight: 400;
+    z-index: 1
+  }
+  :focus {
+    outline: 0
+  }
+  b,
+  b *,
+  strong,
+  strong * {
+    font-weight: 700
+  }
+  ol,
+  ul {
+    list-style: none
+  }
+  button,
+  input,
+  input:not([type]),
+  input[type=color],
+  input[type=text],
+  input[type=time],
+  input[type=url],
+  input[type=week],
+  input[type=button],
+  input[type=reset],
+  input[type=submit],
+  input[type=date],
+  input[type=datetime],
+  input[type=datetime-local],
+  input[type=email],
+  input[type=month],
+  input[type=number],
+  input[type=password],
+  input[type=search],
+  input[type=tel],
+  pre,
+  select,
+  textarea {
+    font: inherit
+  }
+  a {
+    color: #3c99d8;
+  }
+}
+
+.mce-container textarea {
+  display: initial !important
+}
+
+.mce-content-body {
+  font-family: "Avenir W01";
+  font-size: 14px;
+  color: #828282;
+}
+
+.mce-content-body h1,
+.mce-content-body h2,
+.mce-content-body h3,
+.mce-content-body h4,
+.mce-content-body h5,
+.mce-content-body h6 {
+  font-weight: 200;
+  line-height: 1.4em;
+  margin: 25px 0 15px
+}
+
+.mce-content-body h1 {
+  font-size: 34px
+}
+
+.mce-content-body h2 {
+  font-size: 30px
+}
+
+.mce-content-body h3 {
+  font-size: 26px
+}
+
+.mce-content-body h4 {
+  font-size: 22px
+}
+
+.mce-content-body h5 {
+  font-size: 18px
+}
+
+.mce-content-body h6 {
+  font-size: 14px
+}
+
+/*.mce-content-body p {
+    margin: 25px 0
+  }*/
+
+.mce-content-body ol,
+.mce-content-body ul {
+  margin-left: 15px;
+  list-style-position: outside;
+  margin-bottom: 20px
+}
+
+.mce-content-body ol li,
+.mce-content-body ul li {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: #828282;
+  list-style: initial;
+}
+
+.mce-content-body ul {
+  list-style-type: disc
+}
+
+.mce-content-body ol {
+  list-style-type: decimal
+}
+
+.mce-content-body table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid #aaa
+}
+
+.mce-content-body table tr:nth-child(even) {
+  background: #FAFAFA
+}
+
+.mce-content-body table caption,
+.mce-content-body table td,
+.mce-content-body table th {
+  padding: 14px 7px;
+  font: inherit
+}
+
+.mce-content-body table th {
+  font-weight: 400;
+  color: #6E6E6E;
+  background-position: 100% 100%;
+  background-size: 2px 10px;
+  background-repeat: no-repeat
+}
+
+.mce-content-body table th:last-child {
+  background: 0 0
+}

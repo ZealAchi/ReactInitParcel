@@ -1,0 +1,93 @@
+@keyframes timePickerSlideInDown {
+  0% {
+    opacity: 0;
+    transform: translate(0, 10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes timePickerSlideOutDown {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 10px);
+  }
+}
+
+@keyframes timePickerSlideInUp {
+  0% {
+    opacity: 0;
+    transform: translate(0, -10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes timePickerSlideOutUp {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, -10px);
+  }
+}
+
+.@{__timePickerPrefixClass}-panel-placement-bottomLeft {
+  &.timePickerSlideUp-enter,
+  &.timePickerSlideUp-appear {
+    opacity: 0;
+    transform: translate(0, 10px);
+    animation-timing-function: ease-out;
+    animation-duration: .3s;
+  }
+  &.timePickerSlideUp-enter-active,
+  &.timePickerSlideUp-appear-active {
+    visibility: visible;
+    animation-name: timePickerSlideInDown;
+  }
+  &.timePickerSlideUp-leave {
+    opacity: 1;
+    transform: translate(0, 0);
+    animation-timing-function: ease-out;
+    animation-duration: .3s;
+  }
+  &.timePickerSlideUp-leave-active {
+    visibility: visible;
+    animation-name: timePickerSlideOutDown;
+  }
+}
+
+.@{__timePickerPrefixClass}-panel-placement-topLeft {
+  &.timePickerSlideUp-enter,
+  &.timePickerSlideUp-appear {
+    opacity: 0;
+    transform: translate(0, -10px);
+    animation-timing-function: ease-out;
+    animation-duration: .3s;
+  }
+  &.timePickerSlideUp-enter-active,
+  &.timePickerSlideUp-appear-active {
+    visibility: visible;
+    animation-name: timePickerSlideInUp;
+  }
+  &.timePickerSlideUp-leave {
+    opacity: 1;
+    transform: translate(0, 0);
+    animation-timing-function: ease-out;
+    animation-duration: .3s;
+  }
+  &.timePickerSlideUp-leave-active {
+    visibility: visible;
+    animation-name: timePickerSlideOutUp;
+  }
+}

@@ -1,0 +1,94 @@
+@import './theme/default';
+
+.zent-swiper {
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    height: 100%;
+    position: relative;
+    transition: ease-in-out;
+  }
+
+  &__arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    &-icon {
+      @include theme-color(color, stroke, 6);
+      font-size: 20px;
+
+      &:hover {
+        @include theme-color(color, stroke, 5);
+      }
+    }
+
+    &-left {
+      left: 10px;
+
+      .zent-swiper__arrow-icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-right {
+      right: 20px;
+    }
+  }
+
+  &-light {
+    .zent-swiper__arrow-icon {
+      @include theme-color(color, stroke, 9);
+    }
+  }
+
+  &__dots {
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    &-item {
+      @include theme-color(background-color, stroke, 6);
+      display: inline-block;
+      margin: 12px 5px;
+      border: 0;
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      border-radius: 100%;
+      outline: none;
+    }
+
+    &-large .zent-swiper__dots-item {
+      height: 15px;
+      width: 15px;
+    }
+
+    &-small .zent-swiper__dots-item {
+      height: 10px;
+      width: 10px;
+    }
+
+    &-black .zent-swiper__dots-item-active {
+      @include theme-color(background-color, stroke, 1);
+    }
+
+    &-blue .zent-swiper__dots-item-active {
+      @include theme-color(background-color, primary, 4);
+    }
+
+    &-red .zent-swiper__dots-item-active {
+      @include theme-color(background-color, error, 2);
+    }
+
+    &-green .zent-swiper__dots-item-active {
+      @include theme-color(background-color, success, 2);
+    }
+  }
+}

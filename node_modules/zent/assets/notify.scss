@@ -1,0 +1,97 @@
+@import './theme/default';
+@import './theme/font';
+
+$transition-duration: 160ms;
+
+.zent-notify-container {
+  z-index: 10000;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.zent-notify {
+  padding-bottom: 16px;
+  display: flex;
+
+  &-content {
+    @include theme-shadow(modal);
+    @include theme-color(background, stroke, 9);
+    @include font-normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 14px 16px;
+    min-width: 148px;
+    max-width: 344px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: $font-weight-medium;
+    word-break: break-all;
+
+    &:empty:before {
+      content: '\200b';
+    }
+
+    &.zent-notify-content-success {
+      @include theme-color(color, success, 2);
+    }
+
+    &.zent-notify-content-warn {
+      @include theme-color(color, warn, 2);
+    }
+
+    &.zent-notify-content-error {
+      @include theme-color(color, error, 2);
+    }
+
+    &.zent-notify-content-info {
+      @include theme-color(color, stroke, 1);
+
+      .zent-notify-content-icon {
+        @include theme-color(color, primary, 4);
+      }
+    }
+
+    &-icon {
+      margin-right: 16px;
+    }
+  }
+}
+
+.notify-appear {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.notify-appear-active {
+  transform: translateY(0%);
+  opacity: 1;
+  transition-duration: $transition-duration;
+  transition-timing-function: opacity linear, transform ease-in;
+}
+
+.notify-exit {
+  max-height: 48px;
+  opacity: 1;
+
+  .zent-notify-content {
+    transform: translateY(0%);
+  }
+}
+
+.notify-exit-active {
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+  transition-duration: $transition-duration;
+  transition-timing-function: opacity linear, max-height ease-out;
+
+  .zent-notify-content {
+    transform: translateY(-100%);
+    transition-duration: $transition-duration;
+    transition-timing-function: transform ease-out;
+  }
+}

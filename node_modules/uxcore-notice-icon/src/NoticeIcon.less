@@ -1,0 +1,117 @@
+/**
+ * NoticeIcon Component Style for uxcore
+ * @author Amanda111
+ *
+ * Copyright 2017-2018, Uxcore Team, Alinw.
+ * All rights reserved.
+ */
+
+@__noticeIconPrefixCls: kuma-notice-icon;
+@__popoverPrefixCls: kuma-popover;
+@__badgePrefixCls: kuma-badge;
+
+@__noticeIcon_normal: 20px;
+@__noticeIcon_small: 16px;
+
+.@{__noticeIconPrefixCls} {
+  &-popover {
+    &.@{__popoverPrefixCls}-placement-bottomLeft {
+      & .@{__popoverPrefixCls}-arrow {
+        left: 2px;
+      }
+    }
+    &.@{__popoverPrefixCls}-placement-bottomRight {
+      & .@{__popoverPrefixCls}-arrow {
+        right: 2px;
+      }
+    }
+    & .@{__popoverPrefixCls}-content .@{__popoverPrefixCls}-inner {
+      max-width: 320px;
+      padding: 0;
+    }
+  }
+  &-container {
+    min-height: 320px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &-top {
+    box-sizing: border-box;
+    padding: 13px 16px;
+    border-bottom: 1px solid @normal-alpha-7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-info {
+      line-height: 18px;
+    }
+  }
+  &-list {
+    flex-grow: 1;
+    overflow: auto;
+    position: relative;
+    & .@{__noticeIconPrefixCls}-empty {
+      color: @normal-alpha-4;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      user-select: none;
+      &-text {
+        color: @normal-alpha-4;
+      }
+    }
+  }
+  &-cursor:hover {
+    cursor: pointer;
+  }
+  &-bottom {
+    border-top: 1px solid @normal-alpha-7;
+    &-wrap {
+      display: flex;
+    }
+    &-text {
+      background-color: @normal-alpha-8;
+      text-align: center;
+      flex-grow: 1;
+      line-height: 42px;
+      cursor: pointer;
+      color: @dark-alpha-2;
+      user-select: none;
+    }
+  }
+  &-img {
+    font-size: @__noticeIcon_normal;
+    color: @normal-alpha-4;
+    &:hover {
+      color: @normal-alpha-3;
+    }
+    &+.@{__badgePrefixCls}-dot {
+      width: 6px;
+      height: 6px;
+      top: -3px;
+      box-shadow: none;
+    }
+  }
+  &-small {
+    color: @normal-alpha-4;
+    font-size: @__noticeIcon_small;
+    vertical-align: middle;
+  }
+  &-title {
+    vertical-align: middle;
+    margin-left: 10px;
+    user-select: none;
+    color: @dark-alpha-3;
+  }
+  &-dark {
+    .@{__noticeIconPrefixCls}-img {
+      color: @white-alpha-2;
+      &:hover {
+        color: @white-alpha-1;
+      }
+    }
+  }
+}
